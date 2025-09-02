@@ -30,7 +30,13 @@ async def _run_agent(agent: Agent, prompt: str, model_name: str) -> str:
     """
     runner, run_config = setup_agent_runner()
     run_config.model = model_name
-    result = await runner.run(agent, prompt, run_config=run_config)
+    try:
+        result = await runner.run(agent, prompt, run_config=run_config)
+    finally:  # Ensure the underlying HTTP client closes cleanly.
+        provider = getattr(run_config, "model_provider", None)
+        client = getattr(getattr(provider, "openai_provider", None), "_client", None)
+        if client and hasattr(client, "close"):
+            await client.close()
     output = str(result.final_output).strip().lower()
     return output.rstrip(".!")
 

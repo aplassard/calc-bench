@@ -1,12 +1,17 @@
-"""Report accuracy of math agents on a dataset using gpt-oss-20b."""
+"""Report accuracy of math agents on a dataset."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
-from typing import Callable, Dict, Any
+from typing import Any, Callable, Dict
+
+# Disable tracing before importing the Agents SDK to avoid telemetry calls that
+# require valid OpenAI credentials when using alternative gateways.
+os.environ.setdefault("OPENAI_AGENTS_DISABLE_TRACING", "true")
 
 # Ensure src/ on the path for direct execution
 sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
