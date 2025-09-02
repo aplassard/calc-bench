@@ -1,10 +1,20 @@
 [project]
 name = "calc-bench"
 version = "0.1.0"
-description = "Benchmark datasets for math accuracy"
+
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "openai>=1.102.0",
+    "openai-agents>=0.2.10",
+    "pytest>=8.4.1",
+    "python-dotenv>=1.1.1",
+]
+
+[tool.pytest.ini_options]
+markers = ["integration: marks integration tests"]
+description = "Benchmark datasets for math accuracy"
 
 [tool.uv]
 # uv-specific settings can be added here
+
