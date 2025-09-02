@@ -1,7 +1,7 @@
 [project]
 name = "calc-bench"
 version = "0.1.0"
-description = "Add your description here"
+
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,3 +13,8 @@ dependencies = [
 
 [tool.pytest.ini_options]
 markers = ["integration: marks integration tests"]
+description = "Benchmark datasets for math accuracy"
+
+[tool.uv]
+# uv-specific settings can be added here
+

@@ -1,3 +1,4 @@
+
 # Developer Instructions
 
 - Source code lives in `src/` and tests in `tests/`.
@@ -11,3 +12,9 @@
   not trigger OpenAI telemetry errors.
 - Integration tests default to the `gpt-oss-120b` model but honor a
   `MODEL_NAME` environment variable.
+
+- Run Python tasks using `uv run` to ensure a managed environment.
+- The dataset generator lives in `scripts/generate_dataset.py`.
+- Files under `datasets/` are ignored by git except for
+  `datasets/sample.jsonl`, which illustrates the format.
+- Prefer type hints and docstrings for new Python code.
