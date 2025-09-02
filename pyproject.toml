@@ -1,0 +1,10 @@
+[project]
+name = "calc-bench"
+version = "0.1.0"
+description = "Benchmark datasets for math accuracy"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+# uv-specific settings can be added here
