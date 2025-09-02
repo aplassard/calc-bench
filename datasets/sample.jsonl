@@ -1,0 +1,9 @@
+{"first": 24592, "second": 859, "operation": "+", "result": 25451, "equation": "24592 + 859 = 25451", "solution": "correct"}
+{"first": 24592, "second": 859, "operation": "+", "result": 25551, "equation": "24592 + 859 = 25551", "solution": "incorrect"}
+{"first": 25592, "second": 859, "operation": "+", "result": 25451, "equation": "25592 + 859 = 25451", "solution": "incorrect"}
+{"first": 854, "second": 792, "operation": "-", "result": 62, "equation": "854 - 792 = 62", "solution": "correct"}
+{"first": 854, "second": 792, "operation": "-", "result": 72, "equation": "854 - 792 = 72", "solution": "incorrect"}
+{"first": 854, "second": 892, "operation": "-", "result": 62, "equation": "854 - 892 = 62", "solution": "incorrect"}
+{"first": 195, "second": 338, "operation": "*", "result": 65910, "equation": "195 * 338 = 65910", "solution": "correct"}
+{"first": 195, "second": 338, "operation": "*", "result": 65911, "equation": "195 * 338 = 65911", "solution": "incorrect"}
+{"first": 196, "second": 338, "operation": "*", "result": 65910, "equation": "196 * 338 = 65910", "solution": "incorrect"}
