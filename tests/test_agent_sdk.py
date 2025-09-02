@@ -18,11 +18,7 @@ MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-oss-120b")
 
 @pytest.mark.integration
 def test_agent_hello_world():
-    try:
-        runner, run_config = setup_agent_runner()
-    except EnvironmentError:
-        pytest.skip("OPENAI_API_KEY not set; skipping integration test.")
-
+    runner, run_config = setup_agent_runner()
     agent = Agent(name="greeter", model=MODEL_NAME)
     result = runner.run_sync(agent, "Say 'hello world'.", run_config=run_config)
     text = result.final_output_as(str).lower()

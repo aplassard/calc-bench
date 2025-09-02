@@ -14,11 +14,7 @@ MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-oss-120b")
 
 @pytest.mark.integration
 def test_hello_world():
-    try:
-        client = setup_openai_client()
-    except EnvironmentError:
-        pytest.skip("OPENAI_API_KEY not set; skipping integration test.")
-
+    client = setup_openai_client()
     response = client.chat.completions.create(
         model=MODEL_NAME,
         messages=[{"role": "user", "content": "Say 'hello world'."}],
