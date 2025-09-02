@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: https://openrouter.ai/api/v1
+      MODEL_NAME: gpt-oss-120b
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - uses: astral-sh/setup-uv@v1
+      - name: Install dependencies
+        run: uv sync
+      - name: Run tests
+        run: uv run pytest
